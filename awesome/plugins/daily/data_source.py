@@ -10,6 +10,7 @@ import json
 import requests
 
 
+# 获取日常消息
 async def get_daily():
     data = 'category_id=0&add_ad=1&p=1&num=20'
     header = {'Content-Type': 'application/x-www-form-urlencoded',
@@ -17,7 +18,8 @@ async def get_daily():
               'Connection': 'Keep-Alive',
               'Accept-Encoding': 'gzip',
               'User-Agent': 'okhttp/3.9.0'}
-    response = requests.post('http://www.jx3tong.com/?m=api&c=info&a=content_list', data=data, headers=header)
+    response = requests.post('http://www.jx3tong.com/?m=api&c=info&a=content_list', data=data,
+                             headers=header)  # 调用剑三通接口
     daily_info = json.loads(response.text)['daily_info']  # 获取json中daily_info字段
     daily_update_time = daily_info.get('daily_update_time')  # 获取daily_info中daily_update_time
     daily_list = daily_info.get('daily_list')  # 获取daily_info中daily_lsit
@@ -29,6 +31,7 @@ async def get_daily():
     return daily_str
 
 
+# 获取现在时间 2000年1月1日 星期一 12:12:12
 async def get_nowtime():
     now = time
     nowtime = now.strftime('%Y{y}%m{m}%d{d}').format(y='年', m='月', d='日')

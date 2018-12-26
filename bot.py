@@ -11,6 +11,7 @@ import none
 
 import config
 
+# bot启动主文件
 if __name__ == '__main__':
     none.init(config)
     none.load_plugins(path.join(path.dirname(__file__), 'awesome', 'plugins'),

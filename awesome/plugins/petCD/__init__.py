@@ -7,6 +7,7 @@
 from none import on_command, CommandSession, on_natural_language, NLPSession, NLPResult
 
 
+# 宠物CD查询
 @on_command('petCD', aliases=('宠物', '宠物查询'), only_to_me=False)
 async def daily(session: CommandSession):
     await session.send('战无宠物CD(鸭鸭)：http://www.yayaquanzhidao.cn/?ID=9')
