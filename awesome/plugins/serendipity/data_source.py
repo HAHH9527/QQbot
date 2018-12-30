@@ -23,17 +23,16 @@ async def get_serendipity(values):
             n = values[2]
     if len(values) >= 4:
         serendipity_len = values[3]
+    parametes = parse.urlencode({'m': 1, 'test': 1,
+                                 'S': S,  # 服务器
+                                 's': s,  # 奇遇名
+                                 'n': n  # 角色名
+                                 })
     ssl._create_default_https_context = ssl._create_unverified_context
-    values = parse.urlencode({'m': 1, 'test': 1,
-                              'S': S,  # 服务器
-                              's': s,  # 奇遇名
-                              'n': n  # 角色名
-                              })
-    url = 'https://jx3.derzh.com/serendipity/?' + values
+    url = 'https://jx3.derzh.com/serendipity/?' + parametes
     req = request.Request(url)
     with request.urlopen(req) as data:
         this_data = data.read().decode('utf-8')
-    print(this_data)
     json_dict = json.loads(this_data)
     results = json_dict['result']
     serendipity_str = '奇遇:'
