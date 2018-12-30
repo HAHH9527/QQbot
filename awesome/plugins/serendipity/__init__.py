@@ -12,7 +12,4 @@ from awesome.plugins.serendipity.data_source import get_serendipity
 @on_command('serendipity', aliases=('奇遇', '奇遇查询'), shell_like=True, only_to_me=False)
 async def serendipity(session: CommandSession):
     values = session.args['argv']
-    serendipity_str = await get_serendipity(values)
-    await session.send(serendipity_str)
-    # session.get()
-    # await get_serendipity()
+    await session.send(await get_serendipity(values))
