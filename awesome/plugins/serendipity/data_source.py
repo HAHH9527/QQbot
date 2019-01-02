@@ -28,7 +28,7 @@ async def get_serendipity(values):
                                  's': s,  # 奇遇名
                                  'n': n  # 角色名
                                  })
-    ssl._create_default_https_context = ssl._create_unverified_context
+    ssl._create_default_https_context = ssl._create_unverified_context  # 私密链接证书
     url = 'https://jx3.derzh.com/serendipity/?' + parametes
     req = request.Request(url)
     with request.urlopen(req) as data:
