@@ -4,7 +4,7 @@
 @author:10248
 """
 
-from none import on_command, CommandSession, on_natural_language, NLPSession, NLPResult
+from nonebot import on_command, CommandSession, on_natural_language, NLPSession, NLPResult
 
 
 # 宠物CD查询

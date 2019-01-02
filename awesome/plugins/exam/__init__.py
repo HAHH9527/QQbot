@@ -4,7 +4,7 @@
 @author:10248
 """
 
-from none import on_command, CommandSession
+from nonebot import on_command, CommandSession
 
 from awesome.plugins.exam.data_source import get_exam
 

@@ -3,7 +3,7 @@
 @Time:  2018/12/26 18:00
 @author:10248
 """
-from none import on_command, CommandSession, on_natural_language, NLPSession, NLPResult
+from nonebot import on_command, CommandSession, on_natural_language, NLPSession, NLPResult
 from awesome.plugins.daily.data_source import get_daily
 
 

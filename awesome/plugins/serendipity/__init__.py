@@ -3,7 +3,7 @@
 @Time:  2018/12/28 1:00
 @author:10248
 """
-from none import on_command, CommandSession
+from nonebot import on_command, CommandSession
 
 from awesome.plugins.serendipity.data_source import get_serendipity
 
