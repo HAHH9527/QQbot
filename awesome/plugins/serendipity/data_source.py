@@ -31,10 +31,10 @@ async def get_serendipity(values):
     ssl._create_default_https_context = ssl._create_unverified_context  # 私密链接证书
     url = 'https://jx3.derzh.com/serendipity/?' + parametes
     req = request.Request(url)
-    with request.urlopen(req) as data:
-        this_data = data.read().decode('utf-8')
-    json_dict = json.loads(this_data)
-    results = json_dict['result']
+    with request.urlopen(req) as page:
+        this_data = page.read().decode('utf-8')
+    json_data = json.loads(this_data)
+    results = json_data['result']
     serendipity_str = '奇遇:'
     flag_for = 0
     for result in results:

@@ -4,7 +4,6 @@
 @author:10248
 """
 from nonebot import on_command, CommandSession
-
 from awesome.plugins.serendipity.data_source import get_serendipity
 
 

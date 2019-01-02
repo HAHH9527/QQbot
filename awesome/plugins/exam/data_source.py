@@ -19,10 +19,10 @@ async def get_exam(values):
     ssl._create_default_https_context = ssl._create_unverified_context
     url = 'https://jx3.derzh.com/exam/?' + parametes
     req = request.Request(url)
-    with request.urlopen(req) as data:
-        this_data = data.read().decode('utf-8')
-    json_dict = json.loads(this_data)
-    results = json_dict['result']
+    with request.urlopen(req) as page:
+        this_data = page.read().decode('utf-8')
+    json_data = json.loads(this_data)
+    results = json_data['result']
     exam_str = '科举:'
     for result in results:
         exam_str += '\n\n问题:' + result['ques'] + \

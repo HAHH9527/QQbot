@@ -4,7 +4,6 @@ Created on Tue Dec 25 17:20:53 2018
 
 @author: 10248
 """
-
 from nonebot.default_config import *
 
 # bot配置文件
